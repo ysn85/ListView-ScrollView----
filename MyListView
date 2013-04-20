@@ -1,0 +1,44 @@
+import android.content.Context;
+import android.util.AttributeSet;
+import android.view.MotionEvent;
+import android.widget.ListView;
+
+public class MyListView extends ListView {
+
+  public MyListView(Context context) {
+		super(context);
+		// TODO Auto-generated constructor stub
+	}
+
+	public MyListView(Context context, AttributeSet attrs) {
+		super(context, attrs);
+		// TODO Auto-generated constructor stub
+	}
+
+	public MyListView(Context context, AttributeSet attrs, int defStyle) {
+		super(context, attrs, defStyle);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public boolean dispatchTouchEvent(MotionEvent ev) {
+		// TODO Auto-generated method stub
+		return super.dispatchTouchEvent(ev);
+	}
+
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		// TODO Auto-generated method stub
+		switch (event.getAction()) {
+		case MotionEvent.ACTION_UP:
+		case MotionEvent.ACTION_CANCEL:
+		case MotionEvent.ACTION_OUTSIDE:
+			MyScrollView.bTouchEfficent = true;
+			break;
+		default:
+			MyScrollView.bTouchEfficent = false;
+			break;
+		}
+		return super.onTouchEvent(event);
+	}
+}
