@@ -1,0 +1,33 @@
+import android.content.Context;
+import android.util.AttributeSet;
+import android.view.MotionEvent;
+import android.widget.ScrollView;
+
+public class MyScrollView extends ScrollView {
+  public static boolean bTouchEfficent = true;
+
+	public MyScrollView(Context context) {
+		super(context);
+		// TODO Auto-generated constructor stub
+		bTouchEfficent = true;
+	}
+
+	public MyScrollView(Context context, AttributeSet attrs) {
+		super(context, attrs);
+		// TODO Auto-generated constructor stub
+		bTouchEfficent = true;
+	}
+
+	public MyScrollView(Context context, AttributeSet attrs, int defStyle) {
+		super(context, attrs, defStyle);
+		// TODO Auto-generated constructor stub
+		bTouchEfficent = true;
+	}
+
+	@Override
+	public boolean onInterceptTouchEvent(MotionEvent ev) {
+		// TODO Auto-generated method stub
+		return bTouchEfficent ? super.onInterceptTouchEvent(ev)
+				: bTouchEfficent;
+	}
+}
